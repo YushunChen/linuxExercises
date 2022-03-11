@@ -29,7 +29,7 @@ function mean {
 		
 	while read -r line;
 	do 
-		sum=$(($sum+$line));
+		sum=$(echo "$sum + $line" | bc);
 		count=$(($count+1));
 	done < $file_1;
 	mean=$(echo "$sum / $count" | bc -l);
